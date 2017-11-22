@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="palette">
+   <palette>
+    <active>
+     <colorrole role="WindowText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>177</red>
+        <green>162</green>
+        <blue>208</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </active>
+    <inactive>
+     <colorrole role="WindowText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>177</red>
+        <green>162</green>
+        <blue>208</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </inactive>
+    <disabled>
+     <colorrole role="WindowText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="96">
+        <red>164</red>
+        <green>166</green>
+        <blue>168</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </disabled>
+   </palette>
+  </property>
+  <property name="windowTitle">
+   <string>Interprete</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="iconos.qrc">
+    <normaloff>:/new/prefix1/appIcon.png</normaloff>:/new/prefix1/appIcon.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QPlainTextEdit" name="contadorDeLineas">
+      <property name="minimumSize">
+       <size>
+        <width>45</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>45</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QPlainTextEdit" name="editorDeTexto">
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0" colspan="2">
+     <widget class="QPlainTextEdit" name="resultadosDeCompilacion">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>70</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>70</height>
+       </size>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuArchivo">
+    <property name="title">
+     <string>Archivo</string>
+    </property>
+    <addaction name="actionNuevo"/>
+    <addaction name="actionAbrir"/>
+    <addaction name="actionGuardar"/>
+    <addaction name="actionGuardar_como"/>
+    <addaction name="separator"/>
+    <addaction name="actionSalir"/>
+   </widget>
+   <widget class="QMenu" name="menuEdicion">
+    <property name="title">
+     <string>Edicion</string>
+    </property>
+    <addaction name="actionDeshacer"/>
+    <addaction name="actionRehacer"/>
+    <addaction name="actionCopiar"/>
+    <addaction name="actionPegar"/>
+    <addaction name="actionCortar"/>
+   </widget>
+   <widget class="QMenu" name="menuEjecutar">
+    <property name="title">
+     <string>Ejecutar</string>
+    </property>
+    <addaction name="actionCompilar"/>
+   </widget>
+   <addaction name="menuArchivo"/>
+   <addaction name="menuEdicion"/>
+   <addaction name="menuEjecutar"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>LeftToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionNuevo"/>
+   <addaction name="actionAbrir"/>
+   <addaction name="actionGuardar"/>
+   <addaction name="actionGuardar_como"/>
+   <addaction name="separator"/>
+   <addaction name="actionCopiar"/>
+   <addaction name="actionPegar"/>
+   <addaction name="actionCortar"/>
+   <addaction name="separator"/>
+   <addaction name="actionCompilar"/>
+   <addaction name="separator"/>
+   <addaction name="actionSalir"/>
+  </widget>
+  <action name="actionAbrir">
+   <property name="icon">
+    <iconset resource="iconos.qrc">
+     <normaloff>:/new/prefix1/abrir.png</normaloff>:/new/prefix1/abrir.png</iconset>
+   </property>
+   <property name="text">
+    <string>Abrir</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
+   </property>
+  </action>
+  <action name="actionGuardar">
+   <property name="icon">
+    <iconset resource="iconos.qrc">
+     <normaloff>:/new/prefix1/guardar.png</normaloff>:/new/prefix1/guardar.png</iconset>
+   </property>
+   <property name="text">
+    <string>Guardar</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+G</string>
+   </property>
+  </action>
+  <action name="actionGuardar_como">
+   <property name="icon">
+    <iconset resource="iconos.qrc">
+     <normaloff>:/new/prefix1/guardar_como.png</normaloff>:/new/prefix1/guardar_como.png</iconset>
+   </property>
+   <property name="text">
+    <string>Guardar como...</string>
+   </property>
+  </action>
+  <action name="actionNuevo">
+   <property name="icon">
+    <iconset resource="iconos.qrc">
+     <normaloff>:/new/prefix1/nuevo.png</normaloff>:/new/prefix1/nuevo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Nuevo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionSalir">
+   <property name="icon">
+    <iconset resource="iconos.qrc">
+     <normaloff>:/new/prefix1/cerrar.png</normaloff>:/new/prefix1/cerrar.png</iconset>
+   </property>
+   <property name="text">
+    <string>Salir</string>
+   </property>
+  </action>
+  <action name="actionDeshacer">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/new/prefix1/deshacer.png</normaloff>:/new/prefix1/deshacer.png</iconset>
+   </property>
+   <property name="text">
+    <string>Deshacer</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="actionRehacer">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/new/prefix1/rehacer.png</normaloff>:/new/prefix1/rehacer.png</iconset>
+   </property>
+   <property name="text">
+    <string>Rehacer</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Y</string>
+   </property>
+  </action>
+  <action name="actionCopiar">
+   <property name="icon">
+    <iconset resource="iconos.qrc">
+     <normaloff>:/new/prefix1/copiar.png</normaloff>:/new/prefix1/copiar.png</iconset>
+   </property>
+   <property name="text">
+    <string>Copiar</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="actionPegar">
+   <property name="icon">
+    <iconset resource="iconos.qrc">
+     <normaloff>:/new/prefix1/pegar.png</normaloff>:/new/prefix1/pegar.png</iconset>
+   </property>
+   <property name="text">
+    <string>Pegar</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="actionCortar">
+   <property name="icon">
+    <iconset resource="iconos.qrc">
+     <normaloff>:/new/prefix1/cortar.png</normaloff>:/new/prefix1/cortar.png</iconset>
+   </property>
+   <property name="text">
+    <string>Cortar</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+  </action>
+  <action name="actionCompilar">
+   <property name="icon">
+    <iconset resource="iconos.qrc">
+     <normaloff>:/new/prefix1/compilar.png</normaloff>:/new/prefix1/compilar.png</iconset>
+   </property>
+   <property name="text">
+    <string>Compilar</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="iconos.qrc"/>
+ </resources>
+ <connections/>
+</ui>

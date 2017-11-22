@@ -1,0 +1,10 @@
+definir a=10,b=0,j,i;
+
+para(i=0 hasta 10 con paso i++)#
+	para(j=0 hasta 10 con paso j++)#
+	mostrar b;
+	b=b+1;
+	finpara
+	mostrar a;
+finpara
+	

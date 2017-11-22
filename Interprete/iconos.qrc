@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>Interprete.png</file>
+        <file>nuevo.png</file>
+        <file>abrir.png</file>
+        <file>cerrar.png</file>
+        <file>compilar.png</file>
+        <file>copiar.png</file>
+        <file>cortar.png</file>
+        <file>guardar.png</file>
+        <file>guardar_como.png</file>
+        <file>pegar.png</file>
+        <file>appIcon.png</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,26 @@
+definir a=0, num=150;
+mostrar "digite un numero";
+leer a;
+
+si(a%2 != 0 o a==8)#
+	mostrar "el numero es impar";
+	si(a == 7)#
+		mostrar "son los dias de la semana";
+	sino#
+		mostrar "no son los dias de la semana";
+	finsi
+sino si(a%2 == 0)#
+	mostrar "el numero es par";
+sino si(a%4 == 0)#
+	mostrar "puede ser un bisiesto";
+sino#
+	mostrar "eso no es un numero";
+finsi
+
+para(definir a=1 hasta num con paso a++)#
+	mostrar a;
+	mientras(a > 1)#
+		mostrar a;
+		a--;
+	finmientras
+finpara
